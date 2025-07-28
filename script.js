@@ -212,6 +212,27 @@ function typeLine() {
     type();
 }
 
+
+
+// ----------------------------
+// Auto-Uncheck Checkboxes Daily
+// ----------------------------
+(function autoResetDailyChecklist() {
+    const RESET_KEY = 'mission2027_last_reset';
+    const today = new Date().toDateString();
+    const lastReset = localStorage.getItem(RESET_KEY);
+
+    if (lastReset !== today) {
+        const checkboxes = document.querySelectorAll('#tracker input[type="checkbox"]');
+        checkboxes.forEach(box => (box.checked = false));
+        localStorage.setItem(RESET_KEY, today);
+        localStorage.removeItem('confettiPlayed'); // So you can re-unlock Perfect Day again
+        localStorage.setItem('mission2027_checklist', JSON.stringify(
+            Array.from(checkboxes).map(() => false)
+        ));
+    }
+})();
+
 function toggleMenu(toggleIcon) {
     toggleIcon.classList.toggle("active");
     document.getElementById("navLinks").classList.toggle("active");
