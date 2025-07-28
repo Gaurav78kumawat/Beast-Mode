@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* 🌒 1. GLOBAL DARK BASE RESET */
 body {
   margin: 0;
@@ -1364,3 +1366,46 @@ footer p {
     font-size: 1.4rem;
   }
 }
+
+.hero h1 {
+  text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b;
+}
+
+.tracker-box, .section {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.button, .cta {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover, .cta:hover {
+  background-color: #e63946;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .tracker-box {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
